@@ -18,7 +18,7 @@ def run_backtest(
     Args:
         strategy: The strategy to run.
         prices: OHLCV DataFrame indexed by date, ascending.
-        initial_capital: Starting portfolio value (default 1.0 for 
+        initial_capital: Starting portfolio value (default 1.0 for
             easy percentage reading).
         cost_per_trade: Transaction cost as a fraction of traded amount,
             charged when the position changes (0.001 = 10 basis points).
