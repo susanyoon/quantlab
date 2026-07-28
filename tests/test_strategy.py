@@ -1,9 +1,9 @@
 import pandas as pd
 import pytest
 
-from quantlab.strategy import Strategy
 from quantlab.strategies.buy_and_hold import BuyAndHold
 from quantlab.strategies.moving_average import MovingAverageCrossover
+from quantlab.strategy import Strategy
 
 
 def make_prices(closes: list[float]) -> pd.DataFrame:
