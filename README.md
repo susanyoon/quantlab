@@ -9,7 +9,7 @@ A configurable backtesting and strategy research platform for evaluating trading
 - [x] Pluggable strategy interface
 - [x] Event-driven backtest engine with transaction costs
 - [x] Performance metrics (Sharpe, max drawdown, CAGR, win rate)
-- [ ] Walk-forward validation
+- [x] Walk-forward validation
 - [ ] YAML-configured experiment runs
 - [ ] Strategy comparison reports and equity curve charts
 
