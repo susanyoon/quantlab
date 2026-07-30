@@ -10,7 +10,7 @@ A configurable backtesting and strategy research platform for evaluating trading
 - [x] Event-driven backtest engine with transaction costs
 - [x] Performance metrics (Sharpe, max drawdown, CAGR, win rate)
 - [x] Walk-forward validation
-- [ ] YAML-configured experiment runs
+- [x] YAML-configured experiment runs
 - [ ] Strategy comparison reports and equity curve charts
 
 ## Example
@@ -24,3 +24,31 @@ Comparing a moving-average crossover against buy-and-hold on AAPL (2020–2022):
 
 Buy-and-hold earned more, but at higher risk — nearly identical Sharpe ratios
 show the extra return was mostly compensation for volatility, not skill.
+
+## Installation
+
+```bash
+git clone https://github.com/susanyoon/quantlab.git
+cd quantlab
+pip install -e ".[dev]"
+```
+
+## Usage
+
+Define an experiment in a YAML file:
+
+```yaml
+ticker: AAPL
+start: "2020-01-01"
+end: "2023-01-01"
+strategy: moving_average
+params:
+    short_window: 20
+    long_window: 50
+```
+
+Then run it:
+
+```bash
+quantlab run configs/ma_apple.yaml
+```
