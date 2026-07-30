@@ -1,0 +1,8 @@
+ticker: AAPL
+start: "2020-01-01"
+end: "2023-01-01"
+strategy: moving_average
+params:
+  short_window: 20
+  long_window: 50
+cost_per_trade: 0.001
