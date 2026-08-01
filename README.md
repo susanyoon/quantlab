@@ -1,7 +1,9 @@
 # QuantLab
 ![CI](https://github.com/susanyoon/quantlab/actions/workflows/ci.yml/badge.svg)
 
-A configurable backtesting and strategy research platform for evaluating trading strategies against historical market data. Built around a pluggable strategy interface and a no-lookahead backtest engine, with risk-adjusted performance metrics.
+A configurable backtesting and strategy research platform for evaluating trading strategies against historical market data. Built around a pluggable strategy interface and a no-lookahead backtest engine, with risk-adjusted performance metrics. The engine enforces no-lookahead bias by construction, and walk-forward validation guards against overfitting.
+
+![Strategy comparison](docs/comparison.png)
 
 ## Features
 
@@ -11,7 +13,7 @@ A configurable backtesting and strategy research platform for evaluating trading
 - [x] Performance metrics (Sharpe, max drawdown, CAGR, win rate)
 - [x] Walk-forward validation
 - [x] YAML-configured experiment runs
-- [ ] Strategy comparison reports and equity curve charts
+- [x] Strategy comparison reports and equity curve charts
 
 ## Example
 
@@ -43,12 +45,38 @@ start: "2020-01-01"
 end: "2023-01-01"
 strategy: moving_average
 params:
-    short_window: 20
-    long_window: 50
+  short_window: 20
+  long_window: 50
 ```
 
-Then run it:
+Run a single backtest:
 
 ```bash
 quantlab run configs/ma_apple.yaml
 ```
+
+Or compare all strategies & generate the equity-curve chart:
+
+```bash
+quantlab compare configs/ma_apple.yaml
+```
+
+## Tech Stack
+- Python
+- pandas
+- NumPy
+- yfinance
+- matplotlib
+- Typer 
+- PyYAML 
+- pytest 
+- ruff
+
+## Running Tests
+
+```bash
+pytest
+```
+
+## Project Status
+v1.0.0 released.
